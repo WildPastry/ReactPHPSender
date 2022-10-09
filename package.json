@@ -3,9 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/jest": "^29.1.2",
+    "@types/node": "^18.8.3",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@wildpastry/eslint-config": "^1.4.0",
+    "eslint": "^8.25.0",
+    "eslint-plugin-react": "^7.31.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.4"
   },
   "scripts": {
     "start": "react-scripts start",

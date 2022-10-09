@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
 import './App.css';
+import React, { Component } from 'react';
 import axios from 'axios';
 const API_PATH = 'http://localhost/practice-work/react-php/api/contact/index.php';
 
 class App extends Component {
-  constructor(props) {
+  constructor(props: {} | Readonly<{}>) {
     super(props);
     this.state = {
       mailSent: false,
@@ -17,21 +17,20 @@ class App extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  handleFormSubmit = e => {
+  handleFormSubmit = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     e.preventDefault();
     axios({
-      method: 'post',
+      method: 'POST',
       url: `${API_PATH}`,
       headers: { 'content-type': 'application/json' },
       data: this.state
     })
-      .then(result => {
+      .then((result) => {
         this.setState({
           mailSent: result.data.sent
         });
-        console.dir(this.state);
       })
-      .catch(error => this.setState({ error: error.message }));
+      .catch((error) => this.setState({ error: error.message }));
   };
 
   render() {
@@ -47,7 +46,7 @@ class App extends Component {
               name='firstname'
               placeholder='Your name..'
               value={this.state.fname}
-              onChange={e => this.setState({ fname: e.target.value })}
+              onChange={(e) => this.setState({ fname: e.target.value })}
             />
             <label>Last Name</label>
             <input
@@ -56,7 +55,7 @@ class App extends Component {
               name='lastname'
               placeholder='Your last name..'
               value={this.state.lname}
-              onChange={e => this.setState({ lname: e.target.value })}
+              onChange={(e) => this.setState({ lname: e.target.value })}
             />
             <label>Email</label>
             <input
@@ -65,7 +64,7 @@ class App extends Component {
               name='email'
               placeholder='Your email'
               value={this.state.email}
-              onChange={e => this.setState({ email: e.target.value })}
+              onChange={(e) => this.setState({ email: e.target.value })}
             />
             <label>Subject</label>
             <textarea
@@ -73,9 +72,9 @@ class App extends Component {
               name='subject'
               placeholder='Write something..'
               value={this.state.message}
-              onChange={e => this.setState({ message: e.target.value })}
+              onChange={(e) => this.setState({ message: e.target.value })}
             />
-            <input type='submit' onClick={e => this.handleFormSubmit(e)} value='Submit' />
+            <input type='submit' onClick={(e) => this.handleFormSubmit(e)} value='Submit' />
           </form>
           <div>{this.state.mailSent && <div>Thank you for contcting us.</div>}</div>
         </div>
