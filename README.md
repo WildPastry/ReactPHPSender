@@ -6,3 +6,4 @@ Email form with React and PHP
 
 * **React** <br>
 * **PHP** <br>
+* **TypeScript** <br>
