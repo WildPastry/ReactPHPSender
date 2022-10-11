@@ -1,3 +1,8 @@
 ## ReactPHPSender
 
-Email form created with React and PHP back end
+Email form with React and PHP
+
+## Development
+
+* **React** <br>
+* **PHP** <br>
