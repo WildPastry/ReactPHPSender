@@ -32,6 +32,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "axios": "^0.21.2"
+    "axios": "^1.6.0"
   }
 }
